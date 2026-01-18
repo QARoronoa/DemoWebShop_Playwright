@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.log
+
+# Environment
+.env
+
+# IDE
+.idea/
+.vscode/
+
+# Node / Playwright
+node_modules/
+.playwright/
+traces/
+
+# Allure
+allure-results/
+allure-report/
+
+# Reports / HTML
+*.html
+
+# OS
+.DS_Store

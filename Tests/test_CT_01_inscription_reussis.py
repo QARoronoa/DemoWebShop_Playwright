@@ -1,4 +1,3 @@
-import time
 from PagesObjects.HomePage import HomePage
 from PagesObjects.RegisterPage import RegisterPage
 import allure
@@ -20,7 +19,3 @@ def test_inscription_reussie(setup, formulaire_inscription):
 
     with allure.step("Message de confirmation inscription visible"):
         register_page.verifier_message_confirmation_inscription()
-
-
-
-        time.sleep(6)
