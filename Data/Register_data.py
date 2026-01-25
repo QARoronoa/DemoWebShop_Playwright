@@ -14,3 +14,14 @@ class RegisterData:
             "pwd" : "password",
             "pwdConfirm" : "password"
         }
+
+
+    @staticmethod
+    def formulaire_mail_existant():
+        return {
+            "firstName": faker.first_name(),
+            "lastName": faker.last_name(),
+            "email": "dd@s.com",
+            "pwd": "password",
+            "pwdConfirm": "password"
+        }

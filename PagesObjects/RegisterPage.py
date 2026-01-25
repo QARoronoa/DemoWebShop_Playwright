@@ -15,6 +15,7 @@ class RegisterPage(BasePage):
         self.champ_confirmPassword = page.locator("#ConfirmPassword")
         self.bouton_register = page.locator("#register-button")
         self.message_success_registation = page.locator(".result")
+        self.message_derreur_mail = page.locator(".validation-summary-errors")
 
 
     def remplir_le_formulaire(self, firstName, lastName, email, pwd, pwdConfirm):
@@ -30,3 +31,6 @@ class RegisterPage(BasePage):
 
     def verifier_message_confirmation_inscription(self):
         self.verifier_text_element(self.message_success_registation, "Your registration completed" )
+
+    def verifier_la_presence_du_message_derreur(self):
+        self.verifier_text_element(self.message_derreur_mail, "The specified email already exists")

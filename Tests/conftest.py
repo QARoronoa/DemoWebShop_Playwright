@@ -20,3 +20,7 @@ def setup(playwright: Playwright):
 @pytest.fixture
 def formulaire_inscription():
     return RegisterData.formulaire_register()
+
+@pytest.fixture
+def formulaire_inscription_2():
+    return RegisterData.formulaire_mail_existant()
