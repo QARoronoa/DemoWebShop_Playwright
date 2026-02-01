@@ -23,3 +23,7 @@ class BasePage:
     def verifier_text_element(self, locator, text):
         expect(locator).to_be_visible()
         expect(locator).to_contain_text(text)
+
+    @allure.step("le titre de la page est {titre}")
+    def verifier_le_tire(self, titre):
+        expect(self.page).to_have_title(titre)
