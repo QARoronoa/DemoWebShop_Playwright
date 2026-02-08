@@ -3,7 +3,7 @@ from PagesObjects.LoginPage import LoginPage
 import allure
 
 
-def test_connexion_reussie(setup):
+def test_connexion_avec_mauvais_mdp(setup):
     home_page = HomePage(setup)
     login_page = LoginPage(setup)
 
@@ -14,9 +14,9 @@ def test_connexion_reussie(setup):
 
 
     with allure.step("se connecter"):
-        login_page.connexion_valide()
+        login_page.connexion_invalide()
         login_page.cliquer_sur_bouton_login()
 
-    with allure.step("L'utilisateur est connecté"):
-        home_page.verifier_user_est_connecte()
+    with allure.step("Message d'erreur est visible"):
+        login_page.visualiser_message_derreur()
 
