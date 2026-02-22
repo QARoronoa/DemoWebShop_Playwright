@@ -31,7 +31,10 @@ class HomePage(BasePage):
         self.verifier_text_element(self.link_login, "Log in" )
 
     def cliquer_sur_une_categorie_du_menu(self, categorie):
-        self.page.get_by_role("link", name=categorie).nth(0).click()
+        self.page.get_by_role("link", name=categorie).nth(1).click()
 
     def cliquer_sur_un_featured_products(self, item):
         self.page.get_by_text(item).click()
+
+    def selectionner_sous_categorie(self, sous_categorie):
+        self.page.get_by_role("link", name=sous_categorie).nth(1).click()

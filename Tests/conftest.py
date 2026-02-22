@@ -5,10 +5,10 @@ from Data.Register_data import RegisterData
 @pytest.fixture(scope="function")
 def setup(playwright: Playwright):
     browser = playwright.firefox.launch(headless=False)
-    context = browser.new_context()
+    context = browser.new_context(ignore_https_errors=True)
 
     page = context.new_page()
-    page.goto("https://demowebshop.tricentis.com/")
+    page.goto("http://demowebshop.tricentis.com/")
     yield page
 
 
