@@ -14,6 +14,8 @@ class HomePage(BasePage):
         self.link_logout = page.get_by_role("link", name="Log out")
         self.barre_de_recherche = page.locator('#small-searchterms')
         self.bouton_search = page.locator('.search-box-button')
+        self.message_recherche_no_found = page.locator('.search-results')
+
 
     #methodes
 
@@ -49,3 +51,6 @@ class HomePage(BasePage):
 
     def verifier_element_chercher_est_visible(self, item):
         expect(self.page.locator('#Q')).to_have_value(item)
+
+    def verifier_message_item_inexistant(self):
+        expect(self.message_recherche_no_found).to_contain_text("No products")
