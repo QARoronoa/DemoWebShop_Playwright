@@ -12,6 +12,8 @@ class HomePage(BasePage):
         self.link_register = page.get_by_role("link", name="Register")
         self.link_login = page.get_by_role("link", name="Log in")
         self.link_logout = page.get_by_role("link", name="Log out")
+        self.barre_de_recherche = page.locator('#small-searchterms')
+        self.bouton_search = page.locator('.search-box-button')
 
     #methodes
 
@@ -38,3 +40,12 @@ class HomePage(BasePage):
 
     def selectionner_sous_categorie(self, sous_categorie):
         self.page.get_by_role("link", name=sous_categorie).nth(1).click()
+
+    def entrer_un_item_dans_barre_de_recherche(self, text):
+        self.saisir_du_texte_dans_le_champ(self.barre_de_recherche, text)
+
+    def cliquer_sur_bouton_search(self):
+        self.cliquer_sur_un_element(self.bouton_search)
+
+    def verifier_element_chercher_est_visible(self, item):
+        expect(self.page.locator('#Q')).to_have_value(item)

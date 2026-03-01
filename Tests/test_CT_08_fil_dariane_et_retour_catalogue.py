@@ -1,7 +1,5 @@
 import time
-
 import allure
-
 from PagesObjects.HomePage import HomePage
 
 
