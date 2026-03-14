@@ -15,6 +15,7 @@ class HomePage(BasePage):
         self.barre_de_recherche = page.locator('#small-searchterms')
         self.bouton_search = page.locator('.search-box-button')
         self.message_recherche_no_found = page.locator('.search-results')
+        self.shopping_cart = page.get_by_role("link", name="Shopping cart")
 
 
     #methodes
@@ -54,3 +55,6 @@ class HomePage(BasePage):
 
     def verifier_message_item_inexistant(self):
         expect(self.message_recherche_no_found).to_contain_text("No products")
+
+    def cliquer_sur_shopping_cart(self):
+        self.page.locator('.header-links-wrapper').get_by_role('link', name="Shopping cart").click()
