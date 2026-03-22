@@ -17,6 +17,7 @@ class BasePage:
     def saisir_du_texte_dans_le_champ(self, locator: Locator, text):
         expect(locator).to_be_visible()
         expect(locator).to_be_enabled()
+        locator.clear()
         locator.fill(text)
 
     @allure.step("L'élément est visible : {text}")
